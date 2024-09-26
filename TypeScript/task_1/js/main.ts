@@ -33,9 +33,6 @@ interface Teacher {
 	numberOfReports: 17,
   };
   
-  console.log(teacher3);
-  console.log(director1);
-  
   // Function to render teacher or director data in a table
   function renderTeacherTable(teacher: Teacher | Directors) {
 	// Create the table
@@ -75,4 +72,17 @@ interface Teacher {
   
   // Call the function to render the table with director1's data
   renderTeacherTable(director1);
+  
+  // Interface for the printTeacher function
+  interface printTeacherFunction {
+	(firstName: string, lastName: string): string;
+  }
+  
+  // Implementation of the printTeacher function
+  const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+	return `${firstName.charAt(0)}. ${lastName}`;
+  }
+  
+  // Test the printTeacher function
+  console.log(printTeacher("John", "Doe")); // Output: J. Doe
   
